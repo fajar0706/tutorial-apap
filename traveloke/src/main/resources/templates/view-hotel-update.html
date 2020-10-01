@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Update Hotel</title>
+</head>
+<body>
+<h2>Data Telepon Hotel Berhasil di Update !!</h2>
+<h2>Informasi Hotel</h2>
+<h3 th:text="'Id Hotel: ' + ${idHotel}"></h3>
+<h3 th:text="'Nomor Telepon: ' + ${noTelepon}"></h3>
+<a href="/hotel/viewall">Kembali</a>
+</body>
+</html>

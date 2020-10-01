@@ -40,3 +40,37 @@ Sumber:
 
 ### What I did not understand
 - [ ] Skema atau *flow* dari jalannya program spring boot.
+
+--
+## Tutorial 2
+### What I have learned today
+
+### Pertanyaan 
+1. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:
+   http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom
+   &noTelepon=081xxx Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi.
+   **Jawab:** Terdapat tampilan error "Whitelabel Error Page" error ini terjadi karena template yang di return 
+   pada package controller yang mengembalikan "add-hotel" dimana template tersebut belum dibuat.
+2. Menurut kamu anotasi @Autowired pada class Controller tersebut merupakan implementasi dari konsep apa? 
+   Dan jelaskan secara singkat cara kerja @Autowired tersebut dalam konteks service dan controller yang telah kamu buat
+   **Jawab:** Menurut saya anotasi @Autowired merupakan implementasi dari konsep Dependency Injection 
+   dimana pada class HotelController bergantung dengan interface HotelService. Lalu class HotelInMemoryService
+   mengimplementasikan interface HotelService. Sehingga HotelController dapat digunakan pada properti HotelService
+   di class HotelController. Kemudian pada properti HotelService terdapat anotation @Autowired digunakan untuk menginjeksi
+   bean class HotelController.
+3. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:
+   http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom
+   Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi?
+   **Jawab:** Terdapat tampilan error "Whitelabel Error Page" error ini terjadi karena 
+   pada link yang tertera tersebut memiliki parameter yang kurang yaitu, noTelepon. 
+   Dimana pada Controller yang mengembalikan add-hotel yaitu pada link /hotel/add memerlukan
+   parameter "noTelepon" dengan sifat "required = true" yang berarti harus ada parameternya. 
+   Sehingga Jika link yang diberikan tidak ada parameter yang sesuai maka akan terjadi error.
+4. Jika Papa APAP ingin melihat Hotel dengan nama Papa APAP, link apa yang harus diakses?
+   **Jawab:** Dengan asumsi bahwa Papa APAP hanya mengetahui idHotel saja kemudian Papa APAP dapat mengakses 
+   link http://localhost:8080/hotel/view?idHotel={idhotel} nanti akan keluar tampilan yang menampilkan 
+   data mengenai idHotel yang dicari.
+5. Tambahkan 1 contoh Hotel lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/hotel/viewall , 
+   apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
+   **Jawab:** Tampilan yang dikeluarkan adalah semua daftar hotel yang ditambahkan, berikut 
+   screenshoot dari tampilannya https://ibb.co/9YQqdYk

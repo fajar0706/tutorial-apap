@@ -35,4 +35,27 @@ public class HotelInMemoryService implements HotelService{
         return idcheck;
     }
 
+    @Override
+    public void updateHotel(String idHotel, String noTelepon) {
+        HotelModel idcheck = null;
+        for (int i = 0; i < listHotel.size() ; i++) {
+            idcheck = listHotel.get(i);
+            if(idHotel.equals(idcheck.getIdHotel())){
+                idcheck.setNoTelepon(noTelepon);
+            }
+        }
+    }
+
+    @Override
+    public void deleteHotel(String idHotel) {
+        HotelModel idcheck = null;
+        for (int i = 0; i < listHotel.size(); i++) {
+            idcheck = listHotel.get(i);
+            if (idHotel.equals(idcheck.getIdHotel())) {
+                listHotel.remove(i);
+            }
+        }
+    }
+
+
 }

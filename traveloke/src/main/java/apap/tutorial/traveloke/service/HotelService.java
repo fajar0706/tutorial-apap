@@ -18,6 +18,7 @@ public interface HotelService {
 
     void deleteHotel(String idHotel);
 
+
     List<HotelModel> deleteAllList();
 
 }

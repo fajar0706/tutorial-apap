@@ -101,10 +101,12 @@ public class HotelController {
 
         return "view-hotel-delete";
     }
+
     @RequestMapping("/hotel/delete/all")
     public String deleteAll(Model model){
         List<HotelModel> listHotel = hotelService.deleteAllList();
         model.addAttribute("listhotel",listHotel);
         return "view-delete-all";
     }
+
 }

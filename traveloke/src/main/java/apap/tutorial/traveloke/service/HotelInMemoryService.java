@@ -57,5 +57,12 @@ public class HotelInMemoryService implements HotelService{
         }
     }
 
+    @Override
+    public List<HotelModel> deleteAllList() {
+        if (listHotel.size() != 0) {
+            listHotel.clear();
+        }
+        return listHotel;
+    }
 
 }

@@ -11,14 +11,15 @@ public interface HotelService {
     List<HotelModel> getHotelList();
 
     // method untuk mendapatkan data sebuah hotel berdasarkan id hotel
-    HotelModel getHotelByIdHotel(String idHotel);
+    HotelModel getHotelByIdHotel(Long idHotel);
+
+    // Method untuk update hotel
+    HotelModel updateHotel(HotelModel hotel);
 
     // method untuk melakukan update data
-    void updateHotel(String idHotel, String noTelepon);
-
-    void deleteHotel(String idHotel);
-
-
-    List<HotelModel> deleteAllList();
-
+//    void updateHotel(String idHotel, String noTelepon);
+//
+//    void deleteHotel(String idHotel);
+//
+//    List<HotelModel> deleteAllList();
 }

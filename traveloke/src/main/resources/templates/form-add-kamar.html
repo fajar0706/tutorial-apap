@@ -7,6 +7,8 @@
 <body>
     <h3>Tambah Kamar</h3>
     <form th:action="@{/kamar/add}" th:object="${kamar}" method="POST">
+        <input type="hidden" th:field="*{hotel}"/>
+        Nama Kamar: <br>
         <input type="text" name="namaKamar"/>
         <br>
         Tipe Kamar: <br>

@@ -59,7 +59,7 @@ public class HotelController {
         model.addAttribute("hotel", hotel);
         return "update-hotel";
     }
-    @GetMapping("/hotel/view")
+    @GetMapping("/hotel/view/")
     public String viewDetailHotel(
             @RequestParam(value = "idHotel") Long idHotel,
             Model model){
@@ -69,4 +69,11 @@ public class HotelController {
         model.addAttribute("listKamar", listKamar);
         return "view-hotel";
     }
+    @GetMapping("/hotel/viewall")
+    public String viewAllHotel(Model model){
+        List<HotelModel> listHotel = hotelService.getHotelList();
+        model.addAttribute("listHotel",listHotel);
+        return "viewall-hotel";
+    }
+
 }

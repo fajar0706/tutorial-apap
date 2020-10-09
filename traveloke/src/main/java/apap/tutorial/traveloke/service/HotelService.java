@@ -16,6 +16,8 @@ public interface HotelService {
     // Method untuk update hotel
     HotelModel updateHotel(HotelModel hotel);
 
+
+
     // method untuk melakukan update data
 //    void updateHotel(String idHotel, String noTelepon);
 //

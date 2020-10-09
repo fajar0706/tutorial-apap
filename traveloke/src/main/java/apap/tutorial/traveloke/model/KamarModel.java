@@ -1,6 +1,6 @@
 package apap.tutorial.traveloke.model;
 
-import  com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "kamar")
+@Table(name="kamar")
 public class KamarModel implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

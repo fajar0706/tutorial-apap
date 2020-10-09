@@ -1,13 +1,9 @@
 package apap.tutorial.traveloke.model;
 
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-
-import javax.annotation.processing.Generated;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.security.PrivateKey;
 import java.util.List;
 
 @Entity

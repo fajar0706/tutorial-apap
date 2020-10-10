@@ -9,4 +9,10 @@ public interface KamarService {
     void addKamar(KamarModel kamar);
 
     List<KamarModel> findAllKamarByIdHotel(Long idHotel);
+
+    KamarModel getKamarByIdKamar(Long noKamar);
+
+    KamarModel updateKamar(KamarModel kamar);
+
+    void deleteKamar(KamarModel kamar);
 }

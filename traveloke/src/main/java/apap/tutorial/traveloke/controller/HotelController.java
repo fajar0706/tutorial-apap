@@ -85,5 +85,14 @@ public class HotelController {
         model.addAttribute("listHotel",listHotel);
         return "viewall-hotel";
     }
+    @GetMapping("/hotel/delete/{idHotel}")
+    public String deleteHotel(
+            @PathVariable Long idHotel,
+            Model model){
+        HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
+        boolean test = hotelService.deleteHotel(hotel);
+        model.addAttribute("test",test);
+        return "view-hotel-delete";
+    }
 
 }

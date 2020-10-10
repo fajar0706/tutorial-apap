@@ -44,4 +44,15 @@ public class HotelServiceImpl implements HotelService {
             return null;
         }
     }
+
+    @Override
+    public boolean deleteHotel(HotelModel hotel) {
+        HotelModel targetHotel = hotelDb.findById(hotel.getId()).get();
+        if (targetHotel.getListKamar().size() == 0){
+            hotelDb.delete(targetHotel);
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

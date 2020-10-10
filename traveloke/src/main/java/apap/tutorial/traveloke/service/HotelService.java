@@ -21,7 +21,7 @@ public interface HotelService {
     // method untuk melakukan update data
 //    void updateHotel(String idHotel, String noTelepon);
 //
-//    void deleteHotel(String idHotel);
+    boolean deleteHotel(HotelModel hotel);
 //
 //    List<HotelModel> deleteAllList();
 }

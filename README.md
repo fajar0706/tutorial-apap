@@ -24,7 +24,10 @@
 5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER!
    **Jawab:** **FetchType.LAZY** : Memuat Data yang diambil ketika kita mencoba untuk mengaksesnya. contoh saat kita melakukan getListKamar() pada HotelModel, JPA akan mengakses data kamar yang memiliki relasi dengan database hotel  untuk mengambil elemen yang ada pada KamarModel. **FetchType.EAGER**: Memuat seluruh data pada database yang saling berhubungan langsung dengan Parentnya. contoh, kita membuat kamar baru maka secara otomatis akan memuat attribut yang ada pada parentnya tersebut yaitu Hotel. 
    **CascadeType.ALL**: Pendefinisian paramater cascade dalam @OneToMany, berarti semua operasi (PERSIST, REMOVE, REFRESH, MERGE, DETACH) yang dilakukan oleh relasi One (Hotel), maka akan diberlakukan secara otomatis dengan entitas yang terkait yaitu (Kamar).
-
+Referensi: 
+https://thorben-janssen.com/what-is-spring-data-jpa-and-why-should-you-use-it/
+https://qastack.id/programming/13027214/what-is-the-meaning-of-the-cascadetype-all-for-a-manytoone-jpa-association
+https://qastack.id/programming/2990799/difference-between-fetchtype-lazy-and-eager-in-java-persistence-api
 ---
 ## Tutorial 2
 ### What I have learned today

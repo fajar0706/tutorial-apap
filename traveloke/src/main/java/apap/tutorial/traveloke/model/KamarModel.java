@@ -21,7 +21,6 @@ public class KamarModel implements Serializable{
     private String namaKamar;
 
     @NotNull
-    @Size(max = 30)
     @Column(name = "tipe",nullable = false)
     private Integer tipe;
 

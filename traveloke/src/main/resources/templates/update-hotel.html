@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Hotel</title>
+</head>
+<body>
+    <h2 th:text="'Hotel '+ ${hotel.id} +' berhasil di Update'" ></h2>
+    <a th:href="@{/hotel/view?idHotel=}+${hotel.id}" methods="GET">Lihat Hotel</a>
+</body>
+</html>

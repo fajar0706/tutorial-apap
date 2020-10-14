@@ -48,4 +48,9 @@ public class KamarServiceImpl implements KamarService {
         KamarModel targetKamar = kamarDb.findByNoKamar(kamar.getNoKamar()).get();
         kamarDb.delete(targetKamar);
     }
+
+    @Override
+    public List<KamarModel> getKamarByNamaKamarDanTipe(String namaKamar, Integer tipe) {
+        return kamarDb.findKamarByNamaKamarDanTipe(namaKamar,tipe);
+    }
 }

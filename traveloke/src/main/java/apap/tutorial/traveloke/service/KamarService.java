@@ -15,4 +15,6 @@ public interface KamarService {
     KamarModel updateKamar(KamarModel kamar);
 
     void deleteKamar(KamarModel kamar);
+
+    List<KamarModel> getKamarByNamaKamarDanTipe(String namaKamar, Integer tipe);
 }

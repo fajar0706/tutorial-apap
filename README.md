@@ -3,6 +3,66 @@
 * **Fajar Anugerah Subekti** - *1806146940* - *APAP - A*
 
 ---
+## Tutorial 3
+### What I have learned today
+
+### Pertanyaan
+1. Pada class KamarDb, terdapat method findByHotelId, apakah kegunaan dari method tersebut?
+   **Jawab:** Method tersebut berguna untuk mengakses database yang ada pada Model yang tersimpan dalam bentuk list
+   yang kemudian mengembalikan akan semua nilai yang ada di List tersebut.
+2. Pada class HotelController, jelaskan perbedaan method addHotelFormPage dan addHotelSubmit?
+   **Jawab:** method addHotelFormPage digunakan untuk menjalankan perintah form-add-hotel.html yang menampilkan tampilan
+   input beberapa field yang dibutuhkan sedangkan pada addHotelSubmit menjalankan action yang diminta oleh form-add-hotel.html 
+   dan kemudian melakukan perintah untuk menyimpan data pada field yang diinput untu ditambahkan ke database. pada addHotelFormPage
+   menggunakan annotation @GetMapping, sedangkan addHotelSubmit menggunakan annotation @PostMapping
+3. Jelaskan kegunaan dari JPA Repository!
+   **Jawab:** JPA Repository adalah Spesifikasi yang mengidentifikasikan API untuk pemetaan object-relational dan managing persistent object. Kegunaaannya: Reduced boilerplate code (Spring Data JPA menyediakan default implementasi untuk setiap method yang digunakan
+   pada repository interface sehingga membuat query data lebih mudah hanya dengan memanfaatkan find...By)
+4. Sebutkan dan jelaskan di bagian kode mana sebuah relasi antara HotelModel dan KamarModel dibuat?
+   **Jawab:** Code pada KamarModel, pada KamarModel terdapat annotation @JoinColumn dimana column yang diminta merefer kepada column
+   id yang ada pada HotelModel sehingga menjadi sebuah relasi dengan primary key Id pada tabel Model.
+5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER!
+   **Jawab:** **FetchType.LAZY** : Memuat Data yang diambil ketika kita mencoba untuk mengaksesnya. contoh saat kita melakukan getListKamar() pada HotelModel, JPA akan mengakses data kamar yang memiliki relasi dengan database hotel  untuk mengambil elemen yang ada pada KamarModel. **FetchType.EAGER**: Memuat seluruh data pada database yang saling berhubungan langsung dengan Parentnya. contoh, kita membuat kamar baru maka secara otomatis akan memuat attribut yang ada pada parentnya tersebut yaitu Hotel. 
+   **CascadeType.ALL**: Pendefinisian paramater cascade dalam @OneToMany, berarti semua operasi (PERSIST, REMOVE, REFRESH, MERGE, DETACH) yang dilakukan oleh relasi One (Hotel), maka akan diberlakukan secara otomatis dengan entitas yang terkait yaitu (Kamar).
+Referensi: 
+https://thorben-janssen.com/what-is-spring-data-jpa-and-why-should-you-use-it/
+https://qastack.id/programming/13027214/what-is-the-meaning-of-the-cascadetype-all-for-a-manytoone-jpa-association
+https://qastack.id/programming/2990799/difference-between-fetchtype-lazy-and-eager-in-java-persistence-api
+---
+## Tutorial 2
+### What I have learned today
+
+### Pertanyaan 
+1. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:
+   http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom
+   &noTelepon=081xxx Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi.
+   **Jawab:** Terdapat tampilan error "Whitelabel Error Page" error ini terjadi karena template yang di return 
+   pada package controller yang mengembalikan "add-hotel" dimana template tersebut belum dibuat.
+2. Menurut kamu anotasi @Autowired pada class Controller tersebut merupakan implementasi dari konsep apa? 
+   Dan jelaskan secara singkat cara kerja @Autowired tersebut dalam konteks service dan controller yang telah kamu buat
+   **Jawab:** Menurut saya anotasi @Autowired merupakan implementasi dari konsep Dependency Injection 
+   dimana pada class HotelController bergantung dengan interface HotelService. Lalu class HotelInMemoryService
+   mengimplementasikan interface HotelService. Sehingga HotelController dapat digunakan pada properti HotelService
+   di class HotelController. Kemudian pada properti HotelService terdapat anotation @Autowired digunakan untuk menginjeksi
+   bean class HotelController.
+3. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:
+   http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom
+   Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi?
+   **Jawab:** Terdapat tampilan error "Whitelabel Error Page" error ini terjadi karena 
+   pada link yang tertera tersebut memiliki parameter yang kurang yaitu, noTelepon. 
+   Dimana pada Controller yang mengembalikan add-hotel yaitu pada link /hotel/add memerlukan
+   parameter "noTelepon" dengan sifat "required = true" yang berarti harus ada parameternya. 
+   Sehingga Jika link yang diberikan tidak ada parameter yang sesuai maka akan terjadi error.
+4. Jika Papa APAP ingin melihat Hotel dengan nama Papa APAP, link apa yang harus diakses?
+   **Jawab:** Dengan asumsi bahwa Papa APAP hanya mengetahui idHotel saja kemudian Papa APAP dapat mengakses 
+   link http://localhost:8080/hotel/view?idHotel={idhotel} nanti akan keluar tampilan yang menampilkan 
+   data mengenai idHotel yang dicari.
+5. Tambahkan 1 contoh Hotel lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/hotel/viewall , 
+   apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
+   **Jawab:** Tampilan yang dikeluarkan adalah semua daftar hotel yang ditambahkan, berikut 
+   screenshoot dari tampilannya https://ibb.co/9YQqdYk
+
+---
 ## Tutorial 1
 ### What I have learned today
 
@@ -41,36 +101,3 @@ Sumber:
 ### What I did not understand
 - [ ] Skema atau *flow* dari jalannya program spring boot.
 
---
-## Tutorial 2
-### What I have learned today
-
-### Pertanyaan 
-1. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:
-   http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom
-   &noTelepon=081xxx Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi.
-   **Jawab:** Terdapat tampilan error "Whitelabel Error Page" error ini terjadi karena template yang di return 
-   pada package controller yang mengembalikan "add-hotel" dimana template tersebut belum dibuat.
-2. Menurut kamu anotasi @Autowired pada class Controller tersebut merupakan implementasi dari konsep apa? 
-   Dan jelaskan secara singkat cara kerja @Autowired tersebut dalam konteks service dan controller yang telah kamu buat
-   **Jawab:** Menurut saya anotasi @Autowired merupakan implementasi dari konsep Dependency Injection 
-   dimana pada class HotelController bergantung dengan interface HotelService. Lalu class HotelInMemoryService
-   mengimplementasikan interface HotelService. Sehingga HotelController dapat digunakan pada properti HotelService
-   di class HotelController. Kemudian pada properti HotelService terdapat anotation @Autowired digunakan untuk menginjeksi
-   bean class HotelController.
-3. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:
-   http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom
-   Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi?
-   **Jawab:** Terdapat tampilan error "Whitelabel Error Page" error ini terjadi karena 
-   pada link yang tertera tersebut memiliki parameter yang kurang yaitu, noTelepon. 
-   Dimana pada Controller yang mengembalikan add-hotel yaitu pada link /hotel/add memerlukan
-   parameter "noTelepon" dengan sifat "required = true" yang berarti harus ada parameternya. 
-   Sehingga Jika link yang diberikan tidak ada parameter yang sesuai maka akan terjadi error.
-4. Jika Papa APAP ingin melihat Hotel dengan nama Papa APAP, link apa yang harus diakses?
-   **Jawab:** Dengan asumsi bahwa Papa APAP hanya mengetahui idHotel saja kemudian Papa APAP dapat mengakses 
-   link http://localhost:8080/hotel/view?idHotel={idhotel} nanti akan keluar tampilan yang menampilkan 
-   data mengenai idHotel yang dicari.
-5. Tambahkan 1 contoh Hotel lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/hotel/viewall , 
-   apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
-   **Jawab:** Tampilan yang dikeluarkan adalah semua daftar hotel yang ditambahkan, berikut 
-   screenshoot dari tampilannya https://ibb.co/9YQqdYk

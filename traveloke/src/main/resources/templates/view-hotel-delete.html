@@ -4,7 +4,14 @@
     <title>Delete Hotel</title>
 </head>
 <body>
-<h2>Data Hotel Berhasil di Delete !!</h2>
+<div>
+<div th:if="${test == true}">
+    <h2>Data Hotel Berhasil di Delete !!</h2>
+</div>
+<div th:if="${test == false}">
+    <h2>Data Hotel Tidak Berhasil di Delete, karena Hotel Memiliki Kamar</h2>
+</div>
+</div>
 <a href="/hotel/viewall">Kembali</a>
 </body>
 </html>

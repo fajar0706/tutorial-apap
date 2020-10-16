@@ -2,6 +2,22 @@
 ## Authors
 * **Fajar Anugerah Subekti** - *1806146940* - *APAP - A*
 
+
+---
+## Tutorial 4
+### What I have learned today
+
+### Pertanyaan
+1. Jelaskan perbedaan th:include dan th:replace!
+   **Jawab:** th:include = Akan menyertakan konten fragmen ke dalam Host Tag, Sedangkan th:replace = Akan menggantikan Host Tag dengan fragmen.
+2. Jelaskan apa fungsi dari th:object!
+   **Jawab:** th:object = digunakan untuk menentukan objek yang akan diikat oleh data formulir yang dikirimkan
+3. Jelaskan perbedaan dari * dan $ pada saat penggunaan th:object! Kapan harus dipakai?
+   **Jawab:** Penggunaan $ lebih sering digunakan pada th:value, sedangkan * lebih sering digunakan pada th:field. Sebenarnya diantara * dan $ kegunaannya hampir sama yaitu meng-inisiasi Object yang dituju.
+4. Bagaimana kamu menyelesaikan latihan nomor 3?
+   **Jawab:** Untuk menyelesaikan latihan nomor 3 saya hanya memanfaatkan tag "<div class="navbar-text ml-auto" th:text="${page}"></div>" yang diletakan pada file fragment.html kemudian memanggilnya di suatu halaman dengan tag "<nav th:replace="fragments/fragment :: navbar (page='View All Hotel')"></nav>"
+
+
 ---
 ## Tutorial 3
 ### What I have learned today

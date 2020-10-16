@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Delete Kamar</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<div>
-    <h2>Data Kamar Berhasil di Delete !!</h2>
-</div>
+<nav th:replace="fragments/fragment :: navbar"></nav>
+<h2 th:text = "${kamarCount} + ' Kamar telah dihapus' "></h2>
+
 <a href="/hotel/viewall">Kembali</a>
 </body>
 </html>

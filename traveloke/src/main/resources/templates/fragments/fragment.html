@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+
     <head th:fragment="css">
         <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     </head>
@@ -25,7 +26,8 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" th:href="@{/}">Home <span class="sr-only">{current}</span></a>
             </div>
-        </div>    
+            <div class="navbar-text ml-auto" th:text="${page}"></div>
+        </div>
     </nav>
 </body>
 </html>

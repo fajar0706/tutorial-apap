@@ -7,16 +7,16 @@
     <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<nav th:replace="fragments/fragment :: navbar"></nav>
+<nav th:replace="fragments/fragment :: navbar (page = 'View Hotel')"></nav>
 <section>
     <h2>Informasi Hotel</h2>
     <h3 th:text="'Id Hotel: '+ ${hotel.id}"></h3>
     <h3 th:text="'Nama Hotel: '+ ${hotel.namaHotel}"></h3>
     <h3 th:text="'Alamat Hotel: '+ ${hotel.alamat}"></h3>
     <h3 th:text="'Nomor Hotel: '+ ${hotel.nomorTelepon}"></h3>
-    <td><a th:href="@{/hotel/change/}+${hotel.id}">Change Data Hotel</a></td>
+    <td><a th:href="@{/hotel/change/}+${hotel.id}" class="btn btn-outline-primary">Change Data Hotel</a></td>
     <br>
-    <td><a th:href="@{/hotel/delete/}+${hotel.id}" methods="GET ">Delete Hotel</a></td>
+    <td><a th:href="@{/hotel/delete/}+${hotel.id}" methods="GET" class="btn btn-outline-primary">Delete Hotel</a></td>
 
     <p>------------------------------------------------------------------------</p>
 </section>
@@ -52,7 +52,7 @@
                         </td>
 
                         <td th:text="${kamar.kapasitasKamar}"></td>
-                        <td><a th:href="@{/kamar/change/}+${kamar.noKamar}">Change Data Kamar</a></td>
+                        <td><a th:href="@{/kamar/change/}+${kamar.noKamar}"class="btn btn-outline-primary">Change Data Kamar</a></td>
 <!--                        <td><a th:href="@{/kamar/delete/}+${kamar.noKamar}">Delete Kamar</a></td>-->
                         <td>
                             <input type="checkbox" th:field="*{listKamar}" th:value="${kamar.noKamar}"/>
@@ -66,6 +66,6 @@
 <!--    </div>-->
 </section>
 </div>
-    <td><a th:href="@{/kamar/add/}+${hotel.id}">Add Kamar</a></td>
+    <td><a th:href="@{/kamar/add/}+${hotel.id}" class="btn btn-outline-primary">Add Kamar</a></td>
 </body>
 </html>

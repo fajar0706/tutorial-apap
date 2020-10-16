@@ -7,7 +7,7 @@
     <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<nav th:replace="fragments/fragment :: navbar"></nav>
+<nav th:replace="fragments/fragment :: navbar (page = 'Form Add Kamar')"></nav>
 <h3>Tambah Kamar</h3>
 <form th:action="@{/kamar/add}" th:object="${kamar}" method = "POST">
     <input type="hidden" th:field="*{hotel}"/>
@@ -24,7 +24,7 @@
     Kapasitas Kamar : <br>
     <input type="number" name="kapasitasKamar"/>
     <br>
-    <button type = "submit">Submit</button>
+    <button type = "submit" class="btn btn-outline-primary">Submit</button>
 </form>
 </body>
 </html>

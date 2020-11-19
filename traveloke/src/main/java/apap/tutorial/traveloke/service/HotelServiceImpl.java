@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -29,6 +30,11 @@ public class HotelServiceImpl implements HotelService {
     @Override
     public HotelModel getHotelByIdHotel(Long idHotel) {
         return hotelDb.findById(idHotel).get();
+    }
+
+    @Override
+    public Optional<HotelModel> getHotelByIdHotelOptional(Long idHotel) {
+        return hotelDb.findById(idHotel);
     }
 
     @Override

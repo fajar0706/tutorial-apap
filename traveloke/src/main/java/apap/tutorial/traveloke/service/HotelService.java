@@ -2,6 +2,7 @@ package apap.tutorial.traveloke.service;
 
 import apap.tutorial.traveloke.model.HotelModel;
 import java.util.List;
+import java.util.Optional;
 
 public interface HotelService {
     // method untuk menambah Hotel
@@ -12,7 +13,7 @@ public interface HotelService {
 
     // method untuk mendapatkan data sebuah hotel berdasarkan id hotel
     HotelModel getHotelByIdHotel(Long idHotel);
-
+    Optional<HotelModel> getHotelByIdHotelOptional(Long idHotel);
     // Method untuk update hotel
     HotelModel updateHotel(HotelModel hotel);
 

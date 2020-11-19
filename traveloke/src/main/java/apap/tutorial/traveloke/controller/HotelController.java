@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import java.time.*;
 
 import java.util.List;
 
@@ -82,7 +83,9 @@ public class HotelController {
     @GetMapping("/hotel/viewall")
     public String viewAllHotel(Model model){
         List<HotelModel> listHotel = hotelService.getHotelList();
+        LocalTime time = LocalTime.now();
         model.addAttribute("listHotel",listHotel);
+        model.addAttribute("time",time);
         return "viewall-hotel";
     }
     @GetMapping("/hotel/delete/{idHotel}")
@@ -94,5 +97,6 @@ public class HotelController {
         model.addAttribute("test",test);
         return "view-hotel-delete";
     }
+
 
 }

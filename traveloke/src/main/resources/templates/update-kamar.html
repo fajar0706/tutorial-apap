@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Update Kamar Hotel</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
+<nav th:replace="fragments/fragment :: navbar (page = 'Update Kamar Berhasil')"></nav>
 <h2 th:text="'Kamar Hotel '+ ${kamar.noKamar} +' berhasil di Update'" ></h2>
-<a th:href="@{/}" methods="GET">Home</a>
+<a th:href="@{/}" methods="GET" class="btn btn-outline-primary">Home</a>
 </body>
 </html>

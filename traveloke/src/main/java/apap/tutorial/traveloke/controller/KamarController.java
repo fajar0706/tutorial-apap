@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class KamarController {
     @Qualifier("hotelServiceImpl")
@@ -28,18 +32,20 @@ public class KamarController {
             Model model){
         KamarModel kamar = new KamarModel();
         HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
-        kamar.setHotel(hotel);
-        model.addAttribute("kamar", kamar);
+        List<KamarModel> listKamar = new ArrayList<KamarModel>();
+        hotel.setListKamar(listKamar);
+        hotel.getListKamar().add(kamar);
+        model.addAttribute("hotel", hotel);
         return "form-add-kamar";
     }
-    @PostMapping("/kamar/add")
-    private String addKamarSubmit(
-            @ModelAttribute KamarModel kamar,
-            Model model){
-        kamarService.addKamar(kamar);
-        model.addAttribute("kamar",kamar);
-        return "add-kamar";
-    }
+//    @PostMapping("/kamar/add")
+//    private String addKamarSubmit(
+//            @ModelAttribute KamarModel kamar,
+//            Model model){
+//        kamarService.addKamar(kamar);
+//        model.addAttribute("kamar",kamar);
+//        return "add-kamar";
+//    }
     @GetMapping("/kamar/change/{noKamar}")
     private String changeKamarFormPage(
             @PathVariable Long noKamar,
@@ -56,13 +62,64 @@ public class KamarController {
         model.addAttribute("kamar",kamar);
         return "update-kamar";
     }
-    @GetMapping("/kamar/delete/{noKamar}")
-    private String deleteKamar(
-            @PathVariable Long noKamar,
+//    @GetMapping("/kamar/delete/{noKamar}")
+//    private String deleteKamar(
+//            @PathVariable Long noKamar,
+//            Model model){
+//        KamarModel kamar = kamarService.getKamarByIdKamar(noKamar);
+//        kamarService.deleteKamar(kamar);
+//        model.addAttribute("kamar",kamar);
+//        return "view-kamar-delete";
+//    }
+    @PostMapping(path = "/kamar/delete")
+    public String deleteKamarFormSubmit(
+            @ModelAttribute HotelModel hotel,
             Model model){
-        KamarModel kamar = kamarService.getKamarByIdKamar(noKamar);
-        kamarService.deleteKamar(kamar);
-        model.addAttribute("kamar",kamar);
+        model.addAttribute("kamarCount",hotel.getListKamar().size());
+        for (KamarModel kamar : hotel.getListKamar()){
+            kamarService.deleteKamar(kamar);
+        }
         return "view-kamar-delete";
     }
+    @PostMapping(value = "/kamar/add/{idHotel}", params = {"saveKamar"})
+    private String addKamarSubmit(
+            @ModelAttribute HotelModel hotel,
+            Model model
+    ){
+        HotelModel hotelqGet= hotelService.getHotelByIdHotel(hotel.getId());
+        for (KamarModel kamar : hotel.getListKamar()) {
+            kamar.setHotel(hotelqGet);
+            kamarService.addKamar(kamar);
+            model.addAttribute("kamar",kamar);
+        }
+        return "add-kamar";
+    }
+
+    @PostMapping(value = "/kamar/add/{idHotel}", params = {"addBaris"})
+    private String addKamarFormRow(
+            @ModelAttribute HotelModel hotel,
+            Model model
+    ){
+        if(hotel.getListKamar().size()==0){
+            hotel.setListKamar(new ArrayList<KamarModel>());
+        }
+        hotel.getListKamar().add(new KamarModel());
+        model.addAttribute("hotel", hotel);
+
+        return "form-add-kamar";
+    }
+
+    @PostMapping(value = "/kamar/add/{idHotel}", params = {"deleteBaris"})
+    private String deleteKamarFormRow(
+            @ModelAttribute HotelModel hotel,
+            final HttpServletRequest req,
+            Model model
+    ){
+        final Integer rowid = Integer.valueOf(req.getParameter("deleteBaris"));
+        hotel.getListKamar().remove(rowid.intValue());
+
+        model.addAttribute("hotel", hotel);
+        return "form-add-kamar";
+    }
+
 }

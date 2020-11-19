@@ -2,6 +2,24 @@
 ## Authors
 * **Fajar Anugerah Subekti** - *1806146940* - *APAP - A*
 
+## Tutorial 5
+### What I have learned today
+
+### Pertanyaan
+1.  Apa itu Postman? Apa kegunaannya?
+   **Jawab:** Postman merupakan aplikasi/tool open source untuk dokumentasi dan testing API. Postman berguna untuk dokumentasi API, testing API, sharing koleksi API, serta kolaborasi pembuatan API. Postman sangat berguna dan memudahkan dalam melakukan testing karena kita tidak perlu membuat code yang banyak terlebih dahulu untuk sekadar melakukan testing suatu fungsi atau output API.
+2. Jelaskan fungsi dari anotasi @JsonIgnoreProperties dan @JsonProperty.
+   **Jawab:** @JsonIgnoreProperties menandai property dalam class yang di-ignore. Dapat juga digunakan untuk meng-ignore unknown property. @JsonProperty berfungsi untuk menandai atribut agar jackson object mapper dapat memetakan JSON property ke attribute/objek dalam java.
+   **Jawab:** Atribut WebClient berguna untuk menyediakan method untuk mengirim dan menerima data dari resource yang diidentifikasi oleh URI.
+4. Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?
+   **Jawab:** ResponseEntity merepresentasikan HTTP response termasuk header, body, dan status. ResponseEntity dapat digunakan untuk konfigurasi secara lengkap HTTP response. BindingResult berisi validasi dan binding serta berisi error yang mungkin terjadi. BindingResult muncul tepat setelah objek divalidasi. BindingResult dapat digunakan untuk melihat error yang terjadi dalam validasi form dari pengguna dan menyimpan hasilnya.
+
+   ref: 
+   http://zetcode.com/springboot/responseentity/#:~:text=ResponseEntity%20represents%20an%20HTTP%20response,add%20headers%20and%20status%20code.
+   http://zetcode.com/spring/bindingresult/#:~:text=BindingResult%20holds%20the%20result%20of,object%20and%20throws%20an%20exception.
+   https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0#
+   https://www.digitalcrafts.com/blog/student-blog-what-postman-and-why-use-it
+   https://medium.com/skyshidigital/documentation-testing-api-dengan-postman-part-1-5d33e430dca7
 
 ---
 ## Tutorial 4

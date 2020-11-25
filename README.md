@@ -10,6 +10,7 @@
    **Jawab:** Postman merupakan aplikasi/tool open source untuk dokumentasi dan testing API. Postman berguna untuk dokumentasi API, testing API, sharing koleksi API, serta kolaborasi pembuatan API. Postman sangat berguna dan memudahkan dalam melakukan testing karena kita tidak perlu membuat code yang banyak terlebih dahulu untuk sekadar melakukan testing suatu fungsi atau output API.
 2. Jelaskan fungsi dari anotasi @JsonIgnoreProperties dan @JsonProperty.
    **Jawab:** @JsonIgnoreProperties menandai property dalam class yang di-ignore. Dapat juga digunakan untuk meng-ignore unknown property. @JsonProperty berfungsi untuk menandai atribut agar jackson object mapper dapat memetakan JSON property ke attribute/objek dalam java.
+3. Apa kegunaan atribut WebClient?   
    **Jawab:** Atribut WebClient berguna untuk menyediakan method untuk mengirim dan menerima data dari resource yang diidentifikasi oleh URI.
 4. Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?
    **Jawab:** ResponseEntity merepresentasikan HTTP response termasuk header, body, dan status. ResponseEntity dapat digunakan untuk konfigurasi secara lengkap HTTP response. BindingResult berisi validasi dan binding serta berisi error yang mungkin terjadi. BindingResult muncul tepat setelah objek divalidasi. BindingResult dapat digunakan untuk melihat error yang terjadi dalam validasi form dari pengguna dan menyimpan hasilnya.

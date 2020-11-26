@@ -26,6 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/js/**").permitAll()
                 .antMatchers("/kamar/add/**").hasAuthority("RECEPTIONIST")
                 .antMatchers("/user/addUser").hasAuthority("ADMIN")
+                .antMatchers("/user/updatePassword").hasAuthority("USER")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

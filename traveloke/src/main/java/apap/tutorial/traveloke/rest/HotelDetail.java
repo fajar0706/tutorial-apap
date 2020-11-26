@@ -22,5 +22,5 @@ public class HotelDetail {
 
     public Date getValidUntil() {return validUntil; }
 
-    public void setValiduntil (Date validUntil) {this.validUntil = validUntil;}
+    public void setValidUntil(Date validUntil) {this.validUntil = validUntil;}
 }

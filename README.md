@@ -2,6 +2,35 @@
 ## Authors
 * **Fajar Anugerah Subekti** - *1806146940* - *APAP - A*
 
+## Tutorial 6
+### What I have learned today
+
+### Pertanyaan
+1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah andabuat) konsep tersebut diimplementasi?
+   **Jawab:** Perbedaanya Otentikasi dilakukan pada saat melakukan login suatu aplikasi atau sistem, sedangkan otorisasi merupakan suatu wewenang atau bisa
+   disebut dengan privilege yang dimiliki masing - masing user dalam mengakses suatu aplikasi atau sistem.
+   Otentikasi  : pada halaman login awal (UserDetailsServiceImpl.java)
+   Otorisasi   : saat user yang login hanya dapat mengakses beberapa fitur saja, contoh hanya ADMIN yang dapat menambahkan user lain (WebSecurityConfig.java)
+
+2. Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya.
+   **Jawab:** BCryptPasswordEncoder adalah sebuah single-way password encoder dengan tujuan untuk melakukan encrypt sebuah password yang dibuat user. 
+   Cara Kerja: Otentikasi dapat dilakukan dengan pengkodean ulang kata sandi dan memeriksa kata sandi yang dikodekan saat ini dalam database. Program di bawah ini akan menunjukkan cara memverifikasi kata sandi Anda menggunakan BCryptPasswordEncoder.
+   BCryptPasswordEncoder memungkinkan Anda untuk memeriksa kata sandi Anda menggunakan api kecocokan (). Kita harus memberikan kata sandi mentah aktual dan kata sandi terenkripsi. Ini mengembalikan true jika kata sandi cocok dengan kata sandi terenkripsi, jika tidak maka akan mengembalikan salah. 
+
+3. Jelaskan secara singkat apa itu UUID beserta penggunaannya!
+   **Jawab:** UUID (Universally Unique Identifier) untuk memungkinkan sistem terdistribusi untuk secara unik mengidentifikasi informasi tanpa koordinasi pusat signifikan. Kegunaannya melakukan identifikasi sesuatu dengan keyakinan yang memadai bahwa identifier yang sama tidak akan pernah tidak sengaja dibuat oleh siapapun untuk mengidentifikasi sesuatu yang lain. Informasi diberi label dengan UUIDs karena itu dapat kemudian digabungkan menjadi satu database tanpa perlu menyelesaikan identifier (ID) konflik.
+
+4. Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut padahal kita sudah memiliki class UserRoleServiceImpl.java?
+   **Jawab:**  UserDetailsServiceImpl merupakan file yang mengimplemantasi file UserDetailsService dari spring security core. UserDetailsServiceImpl digunakan untuk melakukan load data yang ada pada database dan akan melakukan otentikasi user. UserDetailsService akan melakukan terjemahan data pada database tersebut sehingga user
+   dapat melakukan proses otentikasi.
+   
+   referensi:
+      https://www.yawintutor.com/encode-decode-using-bcryptpasswordencoder-in-spring-boot-security/
+      https://desyarisandinasution.wordpress.com/2012/07/13/all-about-universal-unique-identifier-uuid/
+
+
+
+
 ## Tutorial 5
 ### What I have learned today
 

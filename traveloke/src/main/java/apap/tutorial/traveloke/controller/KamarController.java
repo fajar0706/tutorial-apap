@@ -26,26 +26,39 @@ public class KamarController {
     @Autowired
     private KamarService kamarService;
 
+//    @GetMapping("/kamar/add/{idHotel}")
+//    private String addKamarFormPage(
+//            @PathVariable Long idHotel,
+//            Model model){
+//        KamarModel kamar = new KamarModel();
+//        HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
+//        List<KamarModel> listKamar = new ArrayList<KamarModel>();
+//        listKamar.add(kamar);
+//        kamar.setHotel(hotel);
+//        model.addAttribute("kamar",kamar);
+//        model.addAttribute("hotel", hotel);
+//        model.addAttribute("listKamar",listKamar);
+//        return "form-add-kamar";
+//    }
+
     @GetMapping("/kamar/add/{idHotel}")
-    private String addKamarFormPage(
-            @PathVariable Long idHotel,
-            Model model){
-        KamarModel kamar = new KamarModel();
+    private String addKamarFormPage(@PathVariable Long idHotel, Model model){
+        KamarModel kamar =new KamarModel();
         HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
-        List<KamarModel> listKamar = new ArrayList<KamarModel>();
-        hotel.setListKamar(listKamar);
-        hotel.getListKamar().add(kamar);
-        model.addAttribute("hotel", hotel);
+        kamar.setHotel(hotel);
+        model.addAttribute("kamar", kamar);
+
         return "form-add-kamar";
     }
-//    @PostMapping("/kamar/add")
-//    private String addKamarSubmit(
-//            @ModelAttribute KamarModel kamar,
-//            Model model){
-//        kamarService.addKamar(kamar);
-//        model.addAttribute("kamar",kamar);
-//        return "add-kamar";
-//    }
+
+    @PostMapping("/kamar/add")
+    private String addKamarSubmit(
+            @ModelAttribute KamarModel kamar,
+            Model model){
+        kamarService.addKamar(kamar);
+        model.addAttribute("kamar",kamar);
+        return "add-kamar";
+    }
     @GetMapping("/kamar/change/{noKamar}")
     private String changeKamarFormPage(
             @PathVariable Long noKamar,
@@ -81,45 +94,46 @@ public class KamarController {
         }
         return "view-kamar-delete";
     }
-    @PostMapping(value = "/kamar/add/{idHotel}", params = {"saveKamar"})
-    private String addKamarSubmit(
-            @ModelAttribute HotelModel hotel,
-            Model model
-    ){
-        HotelModel hotelqGet= hotelService.getHotelByIdHotel(hotel.getId());
-        for (KamarModel kamar : hotel.getListKamar()) {
-            kamar.setHotel(hotelqGet);
-            kamarService.addKamar(kamar);
-            model.addAttribute("kamar",kamar);
-        }
-        return "add-kamar";
-    }
-
-    @PostMapping(value = "/kamar/add/{idHotel}", params = {"addBaris"})
-    private String addKamarFormRow(
-            @ModelAttribute HotelModel hotel,
-            Model model
-    ){
-        if(hotel.getListKamar().size()==0){
-            hotel.setListKamar(new ArrayList<KamarModel>());
-        }
-        hotel.getListKamar().add(new KamarModel());
-        model.addAttribute("hotel", hotel);
-
-        return "form-add-kamar";
-    }
-
-    @PostMapping(value = "/kamar/add/{idHotel}", params = {"deleteBaris"})
-    private String deleteKamarFormRow(
-            @ModelAttribute HotelModel hotel,
-            final HttpServletRequest req,
-            Model model
-    ){
-        final Integer rowid = Integer.valueOf(req.getParameter("deleteBaris"));
-        hotel.getListKamar().remove(rowid.intValue());
-
-        model.addAttribute("hotel", hotel);
-        return "form-add-kamar";
-    }
+//    @PostMapping(value = "/kamar/add/{idHotel}", params = {"saveKamar"})
+//    private String addKamarSubmit(
+//            @ModelAttribute HotelModel hotel,
+//            Model model
+//    ){
+////        HotelModel hotelGet= hotelService.getHotelByIdHotel(hotel.getId());
+//        for (KamarModel kamar : hotel.getListKamar()) {
+//            kamar.setHotel(hotel);
+//            kamarService.addKamar(kamar);
+//
+//        }
+//        model.addAttribute("listKamar",hotel.getListKamar());
+//        return "add-kamar";
+//    }
+//
+//    @PostMapping(value = "/kamar/add/{idHotel}", params = {"addBaris"})
+//    private String addKamarFormRow(
+//            @ModelAttribute HotelModel hotel,
+//            Model model
+//    ){
+//        if(hotel.getListKamar() == null){
+//            hotel.setListKamar(new ArrayList<KamarModel>());
+//        }
+//        hotel.getListKamar().add(new KamarModel());
+//        model.addAttribute("hotel", hotel);
+//
+//        return "form-add-kamar";
+//    }
+//
+//    @PostMapping(value = "/kamar/add/{idHotel}", params = {"deleteBaris"})
+//    private String deleteKamarFormRow(
+//            @ModelAttribute HotelModel hotel,
+//            final HttpServletRequest req,
+//            Model model
+//    ){
+//        final Integer rowid = Integer.valueOf(req.getParameter("deleteBaris"));
+//        hotel.getListKamar().remove(rowid.intValue());
+//
+//        model.addAttribute("hotel", hotel);
+//        return "form-add-kamar";
+//    }
 
 }

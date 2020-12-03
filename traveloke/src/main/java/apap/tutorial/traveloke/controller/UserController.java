@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -19,6 +21,14 @@ public class UserController {
 
     @RequestMapping(value = "/addUser",method = RequestMethod.POST)
     public String addUserSubmit(@ModelAttribute UserModel user, Model model){
+        List<UserModel> listUser = userService.findAll();
+        String text = "username sudah ada jadi tidak dapat digunakan lagi";
+        for (UserModel check: listUser) {
+            if(check.getUsername().equals(user.getUsername())){
+                model.addAttribute("text",text);
+                return "notif";
+            }
+        }
         userService.addUser(user);
         model.addAttribute("user",user);
         return "redirect:/";

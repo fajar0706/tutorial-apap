@@ -5,7 +5,7 @@ export default function Item(props){
     const {judul, sinopsis, genre, rating, tahun, imgUrl, checked} = item;
 
     const handleChange = () =>
-        !!onChange && onChange({...Item, checked: !checked});
+        !!onChange && onChange({...item, checked: !checked});
 
     return(
         <button
@@ -23,7 +23,7 @@ export default function Item(props){
                             {judul}({tahun})
                             <input
                                 className="ml-2"
-                                type="checkbox"
+                                type={checked ? "checkbox" : "hidden"}
                                 checked={checked}
                                 onChange={handleChange}
                             />

@@ -8,9 +8,9 @@
 ### Pertanyaan
 1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi
    dari apa yang Anda jelaskan.
-   **Jawab:** 1. ![](images/1.jpg) pada latihan soal satu saya hanya melakukan perubahan pada input item nya dimana checkbox dibuat hidden;;
-   ;2. ![](images/2.jpg) pada latihan kedua saya melakukan tambahan button delete all dan membuat function baru untuk mengosongkan list favorite;;;3. ![](images/3.jpg) pada latihan ketiga saya melakukan delete else pada AddItem seperti diatas. lalu panggil di item dan list
-   favorite yang sesuai.;; 4. ![](images/4.jpg) pada latihan ketiga saya melakukan pembuatan toggle seperti diatas.;; 5. ![](images/5.jpg) pada latihan ke 5 saya membuat component baru EmptyState sesuai diatas. 
+   **Jawab:** 1. ![](images/1.JPG) pada latihan soal satu saya hanya melakukan perubahan pada input item nya dimana checkbox dibuat hidden;;
+   ;2. ![](images/2.JPG) pada latihan kedua saya melakukan tambahan button delete all dan membuat function baru untuk mengosongkan list favorite;;;3. ![](images/3.JPG) pada latihan ketiga saya melakukan delete else pada AddItem seperti diatas. lalu panggil di item dan list
+   favorite yang sesuai.;; 4. ![](images/4.JPG) pada latihan ketiga saya melakukan pembuatan toggle seperti diatas.;; 5. ![](images/5.JPG) pada latihan ke 5 saya membuat component baru EmptyState sesuai diatas. 
 
 2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?
    **Jawab:**  State adalah sebuah properti atau variabel yang didefinisikan di dalam sebuah class (private), sedangkan props adalah properti atau variabel yang berasal dari luar class atau class parent atau dapat digunakan oleh component lain.

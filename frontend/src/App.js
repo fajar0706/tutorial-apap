@@ -47,9 +47,24 @@ export default class App extends React.Component {
         const {show} = this.state;
         this.setState({show : !show});
     };
+    
+    
+    useEffect(() => {
+    localStorage.setItem('variable', JSON.stringify(darkMode))
+    }, [darkMode])
+
+    function getInitialState(){
+        const pengimpanan = JSON.parse(localStorage.getItem('variable'));
+        return pengimpanan || false;
+    }
+
+    function ubahTema() {
+        setDarkMode(!darkMode);
+    }
 
     render() {
         const { favItems } = this.state;
+        const [darkMode, setDarkMode] = useState(getInitialState());
         return (
             <div className="container-fluid">
                 <h1 className="text-center mt-3 mb-0">Favorites Movie App</h1>
@@ -68,6 +83,15 @@ export default class App extends React.Component {
                         <input type="checkbox" onChange={this.handleToggle}/>
                         <span className="slider round"></span>
                     </label>
+                    <div className ={darkMode ? "container-fluid dark-mode" : "container-fluid light-mode"}>
+                    <div className="text-right" >
+                        <label className="switch ">
+                            <input type="checkbox" onChange={ubahTema}/>
+                            <span className="slider round"></span>
+                        </label>
+                        <div className="text-right"><h2> Dark Mode</h2></div>
+                    </div>
+                    </div>
                     <div className="row">
                         <div className="col-sm">
                             <List

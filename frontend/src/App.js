@@ -53,12 +53,12 @@ export default class App extends React.Component {
     localStorage.setItem('variable', JSON.stringify(darkMode))
     }, [darkMode])
 
-    function getInitialState(){
+    getInitialState = () =>{
         const pengimpanan = JSON.parse(localStorage.getItem('variable'));
         return pengimpanan || false;
     }
 
-    function ubahTema() {
+    ubahTema = () => {
         setDarkMode(!darkMode);
     }
 

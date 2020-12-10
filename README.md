@@ -2,6 +2,33 @@
 ## Authors
 * **Fajar Anugerah Subekti** - *1806146940* - *APAP - A*
 
+## Tutorial 7
+### What I have learned today
+
+### Pertanyaan
+1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi
+   dari apa yang Anda jelaskan.
+   **Jawab:** 1. ![](images/1.JPG) pada latihan soal satu saya hanya melakukan perubahan pada input item nya dimana checkbox dibuat hidden;;
+   ;2. ![](images/2.JPG) pada latihan kedua saya melakukan tambahan button delete all dan membuat function baru untuk mengosongkan list favorite;;;3. ![](images/3.JPG) pada latihan ketiga saya melakukan delete else pada AddItem seperti diatas. lalu panggil di item dan list
+   favorite yang sesuai.;; 4. ![](images/4.JPG) pada latihan ketiga saya melakukan pembuatan toggle seperti diatas.;; 5. ![](images/5.JPG) pada latihan ke 5 saya membuat component baru EmptyState sesuai diatas. 
+
+2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?
+   **Jawab:**  State adalah sebuah properti atau variabel yang didefinisikan di dalam sebuah class (private), sedangkan props adalah properti atau variabel yang berasal dari luar class atau class parent atau dapat digunakan oleh component lain.
+   source: https://www.dumetschool.com/blog/Mengenal-State-Dan-Props-Pada-React#:~:text=State%20adalah%20sebuah%20properti%20atau,luar%20class%20atau%20class%20parent.
+
+3. Apa keuntungan menggunakan component (e.g. List, Item) di React? Berikan contohnya!
+   **Jawab:** membagi User Interface (UI) menjadi bagian-bagian yang independen dan dapat digunakan kembali, dan memikirkan setiap bagian secara terpisah. Memungkinkan apabila component yang dibuat dapat digunakan kembali atau reusable
+   source: https://www.techfor.id/pengertian-component-dan-props-pada-react-js/#:~:text=Component%20memungkinkan%20kamu%20membagi%20User,memikirkan%20setiap%20bagian%20secara%20terpisah.
+
+4. Menurut kamu, apa saja kelebihan menggunakan React dalam pengembangan web?
+    **Jawab:** Penggunaaan React dalam pengembangan web memiliki beberapa kelebihan seperti penggunaan component dimana component dibuat secara independen dan dapat digunakan kembali. Tampilan yang diberikan pada penggunaan React lebih menarik.
+
+5. Menurut kamu, apa saja kekurangan menggunakan React dalam pengembangan web?
+   **Jawab:** ReactJS menggunakan JSX. Ini adalah ekstensi sintaks yang memungkinkan HTML dengan JavaScript dicampur bersama. Pendekatan ini memiliki keuntungan tersendiri, tetapi beberapa anggota komunitas pengembangan menganggap BEJ sebagai penghalang, terutama bagi pengembang baru. Pengembang mengeluh tentang kompleksitasnya dalam kurva pembelajaran.
+   source: https://www.konsepkoding.com/2020/08/1-pengenalan-reactjs-kekurangan-dan.html
+
+
+
 ## Tutorial 6
 ### What I have learned today
 

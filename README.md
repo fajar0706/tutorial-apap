@@ -17,13 +17,13 @@
 3. Masukkan jawaban dari Screenshot yang diperintahkan di halaman 7 pada Component Lifecycle
    pada pertanyaan ini.
    **Jawab:**
-   ![](images/Langkah 1.JPG)
-   ![](images/Langkah 2.JPG)
-   ![](images/Langkah 3.JPG)
-   ![](images/Langkah 4.JPG)
-   ![](images/Langkah 5.JPG)
-   ![](images/Langkah 6.JPG)
-   ![](images/Langkah 7.JPG)
+   ![](images/Langkah1.JPG)
+   ![](images/Langkah2.JPG)
+   ![](images/Langkah3.JPG)
+   ![](images/Langkah4.JPG)
+   ![](images/Langkah5.JPG)
+   ![](images/Langkah6.JPG)
+   ![](images/Langkah7.JPG)
 
 4. Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount.
     **Jawab:** componentDidMount: saat pertama kali component berhasil di render, shouldComponentUpdate: dipanggil setelah componentWillReceiveProps dipanggil dan mengembalikan boolean true maka component diupdate atau false maka component tidak diupdate, 

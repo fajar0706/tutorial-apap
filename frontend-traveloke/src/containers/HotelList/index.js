@@ -3,6 +3,7 @@ import APIConfig from "../../api/APIConfig";
 import Button from "../../components/Button";
 import Hotel from "../../components/Hotel";
 import Modal from "../../components/Model";
+import Pagination from "../../components/Pagination";
 import classes from "./styles.module.css";
 
 class HotelList extends Component {
@@ -36,6 +37,8 @@ constructor(props){
         namaHotel: "",
         alamat: "",
         nomorTelepon: "",
+        currPage:1,
+        perPage:5,
     };
     this.handleClickLoading = this.handleClickLoading.bind(this);
     this.handleAddHotel = this.handleAddHotel.bind(this);
@@ -161,17 +164,23 @@ async inputSearch(name){
 
 render() {
     // console.log("render()")
+    const lastIndex = this.state.currPage*this.state.perPage;
+    const firstIndex = lastIndex - this.state.perPage;
+    const hotelPage = this.state.hotels.slice(firstIndex,lastIndex);
+    const paginate = (pageNumber) =>this.setState({currPage:pageNumber})
+
     return (
         <div className={classes.hotelList}>
             <h1 className={classes.title}>All Hotels</h1>
             <Button onClick={this.handleAddHotel} variant="primary">
                 + Add Hotel
             </Button>
+            <div>
             <div className={classes.SearchLayout}>
                 <input className={classes.SearchBar} onChange={this.handleSearch} type="text" placeholder="Search..." aria-label="Search"/>
             </div>
             <div>
-                {this.state.hotels.map((hotel) => (
+                {this.state.hotels && hotelPage.map((hotel) => (
                 <Hotel
                     key={hotel.id}
                     id={hotel.id}
@@ -183,6 +192,10 @@ render() {
                     handleDelete={() => this.handleDeleteHotel(hotel.id)}
                 />
                 ))}
+            </div>
+            <div className={classes.PaginationLayout}>
+                <Pagination total={this.state.hotels.length} perPage={this.state.perPage} paginate={paginate}/>
+            </div>
             </div>
             <Modal show={this.state.isCreate || this.state.isEdit} handleCloseModal={this.handleCancel}>
                 <form>

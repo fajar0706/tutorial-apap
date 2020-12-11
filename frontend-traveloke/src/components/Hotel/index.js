@@ -14,7 +14,7 @@ return (
         <p>{`Alamat: ${alamat}`}</p>
         <p>{`Nomor telepon: ${nomorTelepon}`}</p>
         <div>
-            <p className={classes.bold}>Kamar: </p>
+            <p className={classes.bold}>List Kamar: </p>
             {listKamar.length !==0 ?(
                 <div>
                     {listKamar.map((kamar) => (

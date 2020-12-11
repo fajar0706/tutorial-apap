@@ -47,3 +47,10 @@
     box-shadow: 0 0 0 1px #e2e3e7;
     padding-left: 10px;
 }
+
+.PaginationLayout{
+    width: 50%;
+    margin: auto;
+    justify-items: right;
+    padding-top: 20px;
+}

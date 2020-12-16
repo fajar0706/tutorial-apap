@@ -48,6 +48,7 @@ constructor(props){
     this.handleEditHotel = this.handleEditHotel.bind(this);
     this.handleSubmitEditHotel = this.handleSubmitEditHotel.bind(this);
     this.handleDeleteHotel = this.handleDeleteHotel.bind(this);
+
 }
 componentDidMount() {
     // console.log("componentDidMount()");
@@ -72,7 +73,7 @@ handleEditHotel(hotel) {
 async loadData(){
     try {
         const { data } = await APIConfig.get("/hotels");
-        this.setState({ hotels: data });
+        this.setState({ hotels: data , isLoading: true});
     }catch (error) {
         alert("Oops terjadi masalah pada server");
         console.log(error);
@@ -170,6 +171,8 @@ render() {
     const paginate = (pageNumber) =>this.setState({currPage:pageNumber})
 
     return (
+        <div>
+            {this.state.isLoading ?
         <div className={classes.hotelList}>
             <h1 className={classes.title}>All Hotels</h1>
             <Button onClick={this.handleAddHotel} variant="primary">
@@ -239,6 +242,8 @@ render() {
                     </Button>
                 </form>
             </Modal>
+        </div>
+        : <h4>"Sabar lagi Loading"</h4> }
         </div>
         );
 

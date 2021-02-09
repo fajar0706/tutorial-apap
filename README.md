@@ -2,6 +2,34 @@
 ## Authors
 * **Fajar Anugerah Subekti** - *1806146940* - *APAP - A*
 
+## Tutorial 8
+### What I have learned today
+
+### Pertanyaan
+1. Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian melakukan langkah - langkah tersebut?
+   **Jawab:** Pada latihan satu saya hanya menambahkan string kosong pada setState di method handleCancel(), saya melakukan hal tersebut karena setiap melakukan add sumbit di pada method ini memanggil handleCancel() yang kemudian akan melakukan setState pada beberapa field yang diminta.
+
+2. Jelaskan fungsi dari async dan await!
+   **Jawab:**  async → mengubah function menjadi asynchronous
+   await → menunda eksekusi hingga proses asynchronous selesai, dari kode di atas berarti console.log(result) tidak akan di eksekusi sebelum proses doAsync( ) selesai. 
+   source: https://medium.com/coderupa/panduan-komplit-asynchronous-programming-pada-javascript-part-4-async-await-fc504c344238
+
+3. Masukkan jawaban dari Screenshot yang diperintahkan di halaman 7 pada Component Lifecycle
+   pada pertanyaan ini.
+   **Jawab:**
+   ![](images/Langkah1.JPG)
+   ![](images/Langkah2.JPG)
+   ![](images/Langkah3.JPG)
+   ![](images/Langkah4.JPG)
+   ![](images/Langkah5.JPG)
+   ![](images/Langkah6.JPG)
+   ![](images/Langkah7.JPG)
+
+4. Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount.
+    **Jawab:** componentDidMount: saat pertama kali component berhasil di render, shouldComponentUpdate: dipanggil setelah componentWillReceiveProps dipanggil dan mengembalikan boolean true maka component diupdate atau false maka component tidak diupdate, 
+    componentDidUpdate: dipanggil setelah render berhasil, componentWillReceiveProps: saat sebuah instansi dari sebuah component diupdate dan dipanggil sebelum render dimulai, componentWillUnmount: dipanggil sebelum suatu component dipindahkan dari DOM. 
+
+
 ## Tutorial 7
 ### What I have learned today
 
